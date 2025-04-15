@@ -13,6 +13,6 @@ const (
 	DB_HOST     = "localhost"
 	DB_PORT     = "3306"
 	DB_USER     = "root"
-	DB_PASSWORD = "Kyb^15273031604"
+	DB_PASSWORD = "123456"
 	DB_BASE     = "juhe_pay"
 )

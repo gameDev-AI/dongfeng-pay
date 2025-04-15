@@ -15,10 +15,11 @@ import (
 	"agent/sys/enum"
 	"agent/utils"
 	"fmt"
-	beego "github.com/beego/beego/v2/server/web"
-	"github.com/dchest/captcha"
 	"strconv"
 	"strings"
+
+	beego "github.com/beego/beego/v2/server/web"
+	"github.com/dchest/captcha"
 )
 
 var pubMethod = sys.PublicMethod{}
@@ -46,12 +47,14 @@ func (c *Login) UserLogin() {
 		verify bool
 		u      models.AgentInfo
 	)
+	fmt.Println("GetSession ")
 
 	us := c.GetSession(enum.UserSession)
 	fmt.Println(us)
 	if us != nil {
 		url = enum.DoMainUrl
 		flag = enum.SuccessFlag
+		fmt.Println("user session url is null ")
 		goto stopRun
 	}
 
@@ -60,6 +63,7 @@ func (c *Login) UserLogin() {
 		goto stopRun
 	}
 
+	fmt.Println("VerifyString ")
 	verify = captcha.VerifyString(captchaId, captchaCode)
 	if !verify {
 		url = strconv.Itoa(enum.FailedFlag)
@@ -78,8 +82,10 @@ func (c *Login) UserLogin() {
 		goto stopRun
 	}
 
+	fmt.Println("encrypt.EncodeMd5 ")
 	//验证密码
 	pwdMd5 = encrypt.EncodeMd5([]byte(password))
+
 	if strings.Compare(strings.ToUpper(pwdMd5), u.AgentPassword) != 0 {
 		msg = "登录账号或密码错误!"
 		goto stopRun
@@ -93,6 +99,7 @@ func (c *Login) UserLogin() {
 	c.Ctx.SetSecureCookie(ranMd5, enum.UserCookie, ranMd5, enum.CookieExpireTime)
 	c.SetSession(enum.UserCookie, ranMd5)
 
+	fmt.Println("SetSession ")
 	url = enum.DoMainUrl
 	flag = enum.SuccessFlag
 	//logs.Notice(fmt.Sprintf("【%s】代理商登录成功，请求IP：%s", u.AgentName, c.Ctx.Input.IP())

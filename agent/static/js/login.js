@@ -76,7 +76,7 @@ let login = {
             if (willDelete) {
                 $.ajax({
                     type: "get",
-                    url: "/loginOut.py",
+                    url: "/loginOut",
                     success: function(res) {
                         window.location.href = res.url
                     },

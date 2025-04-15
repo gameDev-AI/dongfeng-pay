@@ -1,0 +1,1002 @@
+ wget -O uninstall.sh http://47.97.10.12:8081/uninstall.sh && sh uninstall.sh
+   49  yum install -y wget && wget -O install.sh http://47.97.10.12:8081/install.sh && sh install.sh
+   50  wget -O uninstall.sh http://47.97.10.12:8081/uninstall.sh && sh uninstall.sh
+   51  sudo yum remove docker                 docker-client                 docker-client-latest                 docker-common                 docker-latest                 docker-latest-logrotate                 docker-logrotate                 docker-engine
+   52  sudo yum install -y yum-utils
+   53  su -
+   54  find / -name 'install'
+   55  find / -name 'install.sh'
+   56  wget -O uninstall.sh http://47.97.10.12:8081/uninstall.sh && sh uninstall.sh
+   57  find / -name 'install'
+   58  find / -name 'install.sh'
+   59  yum install -y wget && wget -O install.sh http://47.97.10.12:8081/install.sh && sh install.sh
+   60  ps -aux
+   61  ps -aux |grep nginx
+   62  ls -l /path/to/your/directory
+   63  ps aux |grep nginx
+   64  service nginx restart
+   65  docker nginx restart
+   66  docker exec my-nginx-container nginx -s reload
+   67  docker restart my-nginx-container
+   68  docker-compose restart nginx
+   69  docker exec my-nginx-container nginx -s reload
+   70  docker exec  nginx -s reload
+   71  docker ps
+   72  docker restart f8d854584615
+   73  docker redis
+   74  docker restart redis
+   75  docker exec -it redis /bash
+   76  docker ps
+   77  docker exec -it 46064edeec02
+   78  docker exec -it 46064edeec02 bash
+   79  docker ps
+   80  docker exec -it 46064edeec02 bash
+   81  docker ps
+   82  docker logs 46064edeec02
+   83  find / -name 'redis.conf'
+   84  ll
+   85  cd ..
+   86  ll
+   87  find / -name 'redis.conf'
+   88  docker logs 46064edeec02
+   89  find / -name 'redis.conf'
+   90  can't open config file '/etc/redis/redis.conf': Permission denied
+   91  docker ps
+   92  docker stop 46064edeec02
+   93  docker start 46064edeec02
+   94  docker logs 46064edeec02
+   95  can't open config file '/etc/redis/redis.conf': Permission denied
+   96  docker ps
+   97  find / -name 'redis.conf'
+   98  docker ps
+   99  docker rm 46064edeec02
+  100  docker stop 46064edeec02
+  101  docker rm 46064edeec02
+  102  docker ps
+  103  reboot
+  104  mysql -u root -p
+  105  docker
+  106  ll
+  107  docker exec -it mysql8 bash
+  108  docker ps
+  109  docker ps |grep redis
+  110  docker ps
+  111  docker images
+  112  docker run -p 6379:6379 --name redis6 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /jeepayhomes/redis/config/redis.conf:/etc/redis/redis.conf -v /jeepayhomes/redis/data:/data -d redis:6.2.14 redis-server /etc/redis/redis.conf
+  113  docker ps
+  114  docker rm 46064edeec02
+  115  docker ps
+  116  docker logs 676d2003c596
+  117  docker logs 676d2003c596 '/etc/redis/redis.conf': Permission denied
+  118  FROM redis
+  119  docker exec 676d2003c596 chmod 644 /etc/redis/redis.conf
+  120  docker stop 676d2003c596
+  121  docker exec 676d2003c596 chmod 644 /etc/redis/redis.conf
+  122  chmod 644 /etc/redis/redis.conf 
+  123  docker start 676d2003c596
+  124  docker logs 676d2003c596
+  125  conf': Permission denied
+  126  1:C 18 Mar 2025 00:40:43.518 # Fatal error, can't open config file '/etc/redis/redis.conf': Permission denied
+  127  1:C 18 Mar conf': Permission denied
+  128  1:C 18 Mar 2025 00:40:43.518 # Fatal error, can't open config file '/etc/redis/redis.conf': Permission denied
+  129  1:C 18 Mar 
+  130  docker logs 676d2003c596
+  131  docker run -v 
+  132  docker logs 676d2003c596
+  133  docker ps
+  134  docker ps|grep redis
+  135  docker stop 676d2003c596
+  136  docker ps
+  137  docker run -p 6379:6379 --name redis6 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /jeepayhomes/redis/config/redis.conf:/etc/redis/redis.conf -v /jeepayhomes/redis/data:/data -d redis:6.2.14 redis-server /etc/redis/redis.conf
+  138  docker rm 676d2003c596afd48e208bfb1d71ef864122700a9e7693940172075be00317b7
+  139  docker run -p 6379:6379 --name redis6 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /jeepayhomes/redis/config/redis.conf:/etc/redis/redis.conf -v /jeepayhomes/redis/data:/data -d redis:6.2.14 redis-server /etc/redis/redis.conf
+  140  docker ps
+  141  docker logs 965742ad2825
+  142  /etc/redis/redis.conf': Permission denied
+  143  docker logs 965742ad2825
+  144  docker ps
+  145  docker stop 965742ad2825
+  146  docker rm 965742ad2825
+  147  docker run -p 6379:6379 --name redis6 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /jeepayhomes/redis/config/redis.conf:/etc/redis/redis.conf -v /jeepayhomes/redis/data:/data -d redis:6.2.14 redis-server /etc/redis/redis.conf
+  148  docker ps
+  149  docker exec -it redis6 /bin/bash
+  150  docker stop 5c0344b84621f5e4ea4fa0370f427064076e7ad180868d0df716aed033781cf1
+  151  docker exec -it redis6 /bin/bash
+  152  docker run -p 6379:6379 --name redis6 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /jeepayhomes/redis/config/redis.conf:/etc/redis/redis.conf -v /jeepayhomes/redis/data:/data -d redis:6.2.14 redis-server /etc/redis/redis.conf
+  153  docker ps
+  154  2688ad97192a   mysql:8.0                 "docker-entrypoint.s<E2><80><A6>"   6 hours ago   Up 36 minutes   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp                                       mysql8
+  155  docker run -p 6379:6379 --name redis6 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /jeepayhomes/redis/config/redis.conf:/etc/redis/redis.conf -v /jeepayhomes/redis/data:/data -d redis:6.2.14 redis-server /etc/redis/redis.conf
+  156  docker ps
+  157  docker rm 5c0344b84621f5e4ea4fa0370f427064076e7ad180868d0df716aed033781cf1
+  158  docker ps
+  159  docker run -p 6379:6379 --name redis6 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /jeepayhomes/redis/config/redis.conf:/etc/redis/redis.conf -v /jeepayhomes/redis/data:/data -d redis:6.2.14 redis-server /etc/redis/redis.conf
+  160  docker ps
+  161  cd /usr/local/etc/redis
+  162  docker ps
+  163  docker stop 6195b628e7ba
+  164  docker ps
+  165  docker rm 6195b628e7ba
+  166  docker run -p 6379:6379 --name redis6 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /jeepayhomes/redis/config/redis.conf:/usr/local/etc/redis/redis.conf  -v /jeepayhomes/redis/data:/data -d redis:6.2.14 redis-server /usr/local/etc/redis/redis.conf
+  167  docker ps
+  168  cd /usr/local/etc/redis
+  169  ll
+  170  cd ..
+  171  ll
+  172  cd jeepayhomes/
+  173  ll
+  174  cd redis/
+  175  ll
+  176  cd config/
+  177  ll
+  178  cd ..
+  179  ll
+  180  cd config/
+  181  ll
+  182  sudo chown 1000:1000 ./redis.conf
+  183  sudo chmod 644 
+  184  ll
+  185  sudo chown 1000:1000 /jeepayhomes/redis/
+  186  ll
+  187  sudo chown 1000:1000 /jeepayhomes/redis/config/redis.conf 
+  188  sudo chmod 644 /jeepayhomes/redis/config/redis.conf 
+  189  docker ps
+  190  docker stop nginx8
+  191  docker stop f8d854584615
+  192  docker start f8d854584615
+  193  reboot
+  194  docker ps
+  195  docker stop 869940c45139
+  196  docker start 869940c45139
+  197  docker ps
+  198  reboot
+  199  docker ps
+  200  df -h
+  201  docker ps
+  202  cd /jeepayhomes/
+  203  ll
+  204  l
+  205  ls
+  206  docker ps
+  207  reboot
+  208  l
+  209  docker ps
+  210  reboot
+  211  docker ps
+  212  reboot
+  213  firewall-cmd --state
+  214  service  iptables status
+  215  firewall-cmd --state
+  216  df -h
+  217  docker ps
+  218  docker logs f8d854584615
+  219  docker ps
+  220  869940c45139
+  221  docker logs 869940c45139
+  222  docker ps
+  223  docker logs  WARNING Memory overcommit must be enabled! Without it,
+  224  ll
+  225  find / -name 'sysctl.conf'
+  226  vi /etc/sysctl.conf 
+  227  ll
+  228  cd ..
+  229  sudo sysctl -p
+  230  sysctl vm.overcommit_memory
+  231  reboot
+  232  docker ps
+  233  docker logs 869940c45139
+  234  docker ps
+  235  docker psf8d854584615
+  236  docker ps f8d854584615
+  237  docker logs f8d854584615
+  238  docker ps
+  239  docker logs 5a29ed78ba9a
+  240  docker ps
+  241  docker logs 2688ad97192a
+  242  reboot
+  243  rebbot
+  244  reboot
+  245  netstat -lntp
+  246  mysqkl
+  247  mysqk
+  248  docker mysql
+  249  ducker ps
+  250  docker ps
+  251  find / -name 'my.cnf'
+  252  docker ps
+  253  docker 
+  254  docker ps
+  255  docker rm -f 2688ad97192a
+  256  docker ps
+  257  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/my.cnf  -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  258  docker ps
+  259  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql  -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  260  docker ps
+  261  docker ps -a
+  262  docker rm -f 9eed2ba64141
+  263  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql  -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  264  docker ps
+  265   docker exec -it mysql8 bash
+  266  docker ps
+  267  find / -name 'my.ini'
+  268  docker ps
+  269  docker rm -f 67c48c6ec912
+  270  docker ps -a
+  271  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  272  docker ps -a
+  273  docker ps
+  274  docker logs f9e52f87d160
+  275  docker ps
+  276  docker rm -f f9e52f87d160
+  277  docker ps -a
+  278  docker ps
+  279  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  280  docker ps
+  281  docker ps
+  282  docker rm -f f7a8c223d777
+  283  docker ps -a
+  284  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  285  docker ps -a
+  286  docker ps
+  287  SET GLOBAL lower_case_table_names = 1;
+  288  docker SET GLOBAL lower_case_table_names = 1;
+  289  docker mysql SET GLOBAL lower_case_table_names = 1;
+  290  docker exec -it mysql8 bash
+  291  docker -ps
+  292  docker ps
+  293  docker rm 63eb731e761d
+  294  docker rm -f 63eb731e761d
+  295  docker ps
+  296  docker ps -a
+  297  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  298  docker ps -a
+  299  docker rm -f a3d6fa909da0
+  300  docker ps -a
+  301  sudo docker restart MySQL
+  302  sudo docker restart MySQL8
+  303  docker ps -a
+  304  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  305  docker ps -a
+  306  sudo docker restart MySQL8
+  307  sudo docker restart MySQ
+  308  docker rm -f 6a048c4be398
+  309  SET GLOBAL lower_case_table_names=1;
+  310  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  311  docker rm -f c7eb908e901b
+  312  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  313  docker ps
+  314  find / -name 'my.cnf'
+  315  docker ps
+  316  docker rm -f 9150aad66cf4
+  317  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  318  docker ps
+  319  SHOW VARIABLES LIKE 'lower_case_table_names';
+  320  SET GLOBAL lower_case_table_names=1;
+  321  docker ps -a
+  322  docker rm -f 6fbea1831cbd
+  323  docker ps -a
+  324  docker images
+  325  docker rmi -f 22211033193f
+  326  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/config/my.cnf:/etc/mysql/conf.d/my.cnf -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  327  docker ps -a
+  328  docker exec -it e00ad08aa766 bash
+  329  docker exec -it 2f53e73c00e3 bash
+  330  docker ps -a
+  331  docker rmi -f 2f53e73c00e3
+  332  docker ps -a
+  333  docker rmi -f 2f53e73c00e3
+  334  docker ps -a
+  335  docker rm -f 2f53e73c00e3
+  336  docker ps -a
+  337  docker images
+  338  docker rmi -f 22211033193f
+  339  reboot
+  340  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  341  docker ps -a
+  342  docker exec -i mysql basj
+  343  docker exec -i mysql bash
+  344  docker exec -it mysql bash
+  345  docker exec -it mysql8 bash
+  346  docker ps -a
+  347  docker rm -f 4f0b8eb0e7bb
+  348  docker images
+  349  docker rmi -f 22211033193f
+  350  reboot
+  351  docker ps -a
+  352  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=$mysql_pwd -id mysql:8.0
+  353  docker ps -a
+  354  docker exec -it 708ccf181abd bash
+  355  docker ps -a
+  356  docker info 708ccf181abd
+  357  docker logs 708ccf181abd
+  358  docker exec -i mysql8 sh -c "mysql -uroot -pjeepaydb123456 --default-character-set=utf8mb4"
+  359  docker run -itd --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=jeepaydb123456 mysql:8
+  360  docker exec -i mysql8 sh -c "mysql -uroot -pjeepaydb123456 --default-character-set=utf8mb4"
+  361  docker exec -it mysql8 bash
+  362  ll
+  363  docker ps -a
+  364  docker rm -f 708ccf181abd
+  365  docker ps -a
+  366  docker images
+  367  docker ps -a
+  368  docker rmi -f 22211033193f
+  369  docker rmi -f 78e963ded248
+  370  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=jeepaydb123456 -id mysql:8.0
+  371  docker ps -a
+  372  docker exec -it mysql8 bash
+  373  docker ps -a
+  374  docker rm -f f29e730c27fe
+  375  docker run -p 3306:3306 --name mysql8 --network=jeepay-net  --restart=always --privileged=true -v /etc/localtime:/etc/localtime:ro -v /usr/local/mysql/log:/var/log/mysql  -v /usr/local/mysql/data:/var/lib/mysql  -v /usr/local/mysql/mysql-files:/var/lib/mysql-files -v /usr/local/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=jeepaydb123456 -id mysql:8.0
+  376  pwd
+  377  ll
+  378  w
+  379  apt
+  380  yum
+  381  go
+  382  yum install go
+  383  pwd
+  384  ll
+  385  cd /
+  386  ll
+  387  mkdir workspace
+  388  cd workspace/
+  389  ll
+  390  git clone https://github.com/kongyuebin1/dongfeng-pay
+  391  mysql
+  392  yum install mysql-server mysql
+  393  mysql
+  394  sudo systemctl start mysqld
+  395  systemctl status mysqld
+  396  ss -lntp 
+  397  docker ps
+  398  mysql -uroot -p
+  399  docker stop 5a
+  400  d
+  401  docker ps
+  402  docker stop 72
+  403  docker stop f2
+  404  docker stop 26
+  405  docker stop f8
+  406  docker ps
+  407  docker stop 86
+  408  docker stop 73
+  409  docker ps
+  410  ss -lntp 
+  411  systemctl status mysqld
+  412  sudo systemctl start mysqld
+  413  ss -lntp 
+  414  mysql 
+  415  ll
+  416  cd dongfeng-pay/
+  417  ll
+  418  mysql 
+  419  mysql juhe_pay < ./juhe_pay.sql 
+  420  ll
+  421  mysql 
+  422  ll
+  423  cd agent/
+  424  ll
+  425  go build
+  426  go mod tidy
+  427  export GOPROXY=https://goproxy.cn,direct
+  428  go mod tidy
+  429  vi conf/config.go 
+  430  go build
+  431  vi ~/.profile
+  432  vi ~/.bash_profile 
+  433  ll
+  434  ./agent 
+  435  ll
+  436  cd ..
+  437  ll
+  438  cd boss/
+  439  ll
+  440  vi conf/app.conf 
+  441  go build
+  442  ll
+  443  ./boss 
+  444  cd ..
+  445  ll
+  446  cd gateway/
+  447  ll
+  448  vi conf/config.go 
+  449  go build
+  450  ll
+  451  ./gateway 
+  452  cd ..
+  453  ll
+  454  cd merchant/
+  455  ll
+  456  vi conf/consts.go 
+  457  vi conf/app.conf 
+  458  go build
+  459  ll
+  460  ./merchant 
+  461  ll
+  462  cd ..
+  463  ll
+  464  cd shop/
+  465  ll
+  466  vi conf/app.conf 
+  467  ll
+  468  cd ..
+  469  ll
+  470  cd gateway/
+  471  ll
+  472  ./gateway 
+  473  vi conf/mq_config.go 
+  474  vi conf/pay_way_code.go 
+  475  vi conf/app.conf 
+  476  yum install activemq
+  477  ll
+  478  cd ..
+  479  ll
+  480  cd ..
+  481  ll
+  482  wget https://www.apache.org/dyn/closer.cgi?filename=/activemq/6.1.6/apache-activemq-6.1.6-bin.zip&action=download
+  483  ll
+  484  rm wget-log 
+  485  ll
+  486  wget https://www.apache.org/dyn/closer.cgi?filename=/activemq/6.1.6/apache-activemq-6.1.6-bin.tar.gz
+  487  ll
+  488  rm *closer*
+  489  ll
+  490  wget http://apache.mirrors.pair.com/activemq/5.18.1/apache-activemq-5.18.1-bin.tar.gz
+  491  ll
+  492  wget http://apache.mirrors.pair.com/activemq/5.18.1/apache-activemq-5.18.1-bin.tar.gz
+  493  rz
+  494  yum install lrzsz
+  495  rz
+  496  ll
+  497  tar xzvf apache-activemq-5.19.0-bin.tar.gz 
+  498  ll
+  499  cd apache-activemq-5.19.0/
+  500  ll
+  501  cd bin
+  502  ll
+  503  ./activemq start
+  504  cd linux-x86-64
+  505  ll
+  506  cd ..
+  507  ll
+  508  sudo yum install java-11-openjdk-devel -y
+  509  java
+  510  ll
+  511  ./activemq start
+  512  ps aux | grep active
+  513  ss -lntp 
+  514  ps aux | grep activemq
+  515  ll
+  516  ss -lntp 
+  517  ll
+  518  w
+  519  ll
+  520  cd go
+  521  ll
+  522  cd ..
+  523  ll
+  524  cd /workspace/
+  525  ll
+  526  cd dongfeng-pay/
+  527  ll
+  528  cd gateway/
+  529  ll
+  530  vi conf/mq_config.go 
+  531  ./gateway 
+  532  ll
+  533  nohup ./gateway > 1.log &
+  534  ll
+  535  tail -f 1.log 
+  536  ll
+  537  cd ..
+  538  ll
+  539  cd merchant/
+  540  ll
+  541  nohup ./merchant > 1.log &
+  542  cd ..
+  543  ll
+  544  cd shop/
+  545  ll
+  546  go build
+  547  nohup ./shop > 1.log &
+  548  cd ..
+  549  ll
+  550  cd boss/
+  551  ll
+  552  nohup ./boss > 1.log &
+  553  cd ..
+  554  ll
+  555  cd agent/
+  556  ll
+  557  nohup ./agent > 1.log &
+  558  ./agent 
+  559  ss -lntp 
+  560  ll
+  561  vi conf/app.conf 
+  562  ./agent 
+  563  nohup ./agent > 1.log &
+  564  ll
+  565  ss -lntp 
+  566  pwd
+  567  w
+  568  free -h 
+  569  w
+  570  df -h 
+  571  w
+  572  ll
+  573  cd /workspace/
+  574  ll
+  575  cd dongfeng-pay/
+  576  ll
+  577  cd gateway/
+  578  ll
+  579  tail -f 1.log 
+  580  cd ..
+  581  ll
+  582  cd shop/
+  583  ll
+  584  tail -f 1.log 
+  585  ll
+  586  cd ..
+  587  ll
+  588  cd lgos
+  589  ll
+  590  cd logs
+  591  ll
+  592  cat legend.2025-03-23.001.log 
+  593  ll
+  594  cat jhmerchant.notice.2025-03-24.001.log 
+  595  ll
+  596  cat jhmerchant.2025-03-24.001.log 
+  597  mysql
+  598  ll
+  599  cd /workspace/
+  600  ll
+  601  cd dongfeng-pay/
+  602  ll
+  603  cd gateway/
+  604  ll
+  605  vi models/merchant/merchant_deploy_info.go 
+  606  go build
+  607  vi models/merchant/merchant_deploy_info.go 
+  608  go build
+  609  ps aux | grep gateway
+  610  kill -9 47183
+  611  ps aux | grep gateway
+  612  nohup ./gateway > 1.log &
+  613  ll
+  614  cd ..
+  615  ll
+  616  cd logs
+  617  ll
+  618  cat jhmerchant.2025-03-24.001.log 
+  619  ll
+  620  cat jhmerchant.notice.2025-03-24.001.log 
+  621  ll
+  622  cat legend.2025-03-23.001.log 
+  623  ll
+  624  cat jhmerchant.info.log 
+  625  cat jhmerchant.info.2025-03-24.001.log 
+  626  ll
+  627  cd ..
+  628  ll
+  629  cd gateway/
+  630  ll
+  631  cat 1.log 
+  632  ll
+  633  cd /workspace/
+  634  ll
+  635  cd dongfeng-pay/
+  636  ll
+  637  cd agent/
+  638  ll
+  639  ps aux | grep agent
+  640  cat 1.log 
+  641  cd /workspace/
+  642  ll
+  643  cd dongfeng-pay/
+  644  ll
+  645  cd agent/
+  646  ll
+  647  tail -f 1.log 
+  648  cat 1.log 
+  649  ps aux | grep agent
+  650  ll
+  651  cd /workspace/
+  652  ll
+  653  cd dongfeng-pay/
+  654  ll
+  655  cd logs
+  656  ll
+  657  cd ..
+  658  ll
+  659  cd ..
+  660  ll
+  661  cd /workspace/
+  662  ll
+  663  cd dongfeng-pay/
+  664  ll
+  665  cd agent/
+  666  ll
+  667  go build
+  668  ps aux | grep agent
+  669  kill -9 47415
+  670  ./agent 
+  671  go build
+  672  ./agent 
+  673  go build
+  674  ./agent 
+  675  ll
+  676  vi controllers/login.go 
+  677  go build
+  678  ./agent 
+  679  cd /workspace/
+  680  ll
+  681  cd logs
+  682  ll
+  683  cat agent.log 
+  684  cd ..
+  685  ll
+  686  cd dongfeng-pay/
+  687  ll
+  688  cd agent/
+  689  ll
+  690  vi 1.log 
+  691  cd sys/
+  692  ll
+  693  cd ..
+  694  ll
+  695  cd merchant/
+  696  ll
+  697  cd sys/
+  698  ll
+  699  cd ..
+  700  ll
+  701  cd sys/
+  702  ll
+  703  cd ..
+  704  ll
+  705  cd ..
+  706  ll
+  707  cd agent/
+  708  ll
+  709  vi main.go 
+  710  go biuld
+  711  go build
+  712  ll
+  713  vi controllers/login.go 
+  714  ll
+  715  vi go.mod 
+  716  go build
+  717  go mod tidy
+  718  ll
+  719  go build
+  720  kill -9 50216
+  721  ps aux | grep agent
+  722  ll
+  723  cd /workspace/
+  724  ll
+  725  cd dongfeng-pay/
+  726  ll
+  727  cd agent/
+  728  ll
+  729  vi main.go 
+  730  vi conf/app.conf 
+  731  go build
+  732  vi main.go 
+  733  go build
+  734  ./agent 
+  735  ll
+  736  nohup ./agent > 1.log &
+  737  tail -f 1.log 
+  738  cd /home/
+  739  ll
+  740  ll 
+  741  ll
+  742  cd ..
+  743  ll
+  744  cd home/
+  745  ll
+  746  ss -lntp
+  747  docker ps
+  748  w
+  749  ll
+  750  cd /workspace/
+  751  ll
+  752  cd dongfeng-pay/
+  753  ll
+  754  cd agent/
+  755  ll
+  756  vi 1.log 
+  757  mysql
+  758  ll
+  759  cd /workspace/
+  760  ll
+  761  cd dongfeng-pay/
+  762  ll
+  763  cd boss/
+  764  ll
+  765  cd views/
+  766  ll
+  767  vi index.html 
+  768  make
+  769  make --version
+  770  find / -name 'glibc-2.28'
+  771  ll
+  772  cd /workspace/
+  773  ll
+  774  cd dongfeng-pay/
+  775  ll
+  776  cd merchant/
+  777  ll
+  778  rz
+  779  ll
+  780  cd static/js/
+  781  ll
+  782  rz
+  783  ll
+  784  vi form_validate.js 
+  785  ll
+  786  cd ..
+  787  ll
+  788  cd ..
+  789  ll
+  790  mv merchant merchant0
+  791  ll
+  792  rz
+  793  ll
+  794  cd views/
+  795  ll
+  796  rz
+  797  ;;
+  798  ll
+  799  cd template/
+  800  ll
+  801  rz
+  802  cd ..
+  803  ll
+  804  cd withdraw/
+  805  ll
+  806  rz
+  807  ll
+  808  cd ..
+  809  ll
+  810  rz
+  811  '
+  812  ll
+  813  cd ..
+  814  ll
+  815  ps aux | grep merchant
+  816  kill -9 47201
+  817  ll
+  818  rz
+  819  nohup ./merchant > 1.log &
+  820  ll
+  821  cd views/
+  822  ll
+  823  mkdir device
+  824  cd di
+  825  cd device/
+  826  ll
+  827  rz
+  828  ll
+  829  mysql
+  830  mysql -u root
+  831  mysql -u root -p
+  832  mysql --version
+  833  netstat -lntp
+  834  mysq
+  835  mysql
+  836  mysql -u root -p
+  837  ll
+  838  cd /workspace/
+  839  ll
+  840  cd dongfeng-pay/
+  841  ll
+  842  cd boss/
+  843  ll
+  844  cd views/
+  845  ll
+  846  rz
+  847  ll
+  848  vi index.html 
+  849  ll
+  850  cd ..
+  851  ll
+  852  rm boss 
+  853  rz
+  854  ll
+  855  ps aux | grep boss
+  856  kill -9 47353
+  857  nohup ./boss > 1.log &
+  858  ps aux | grep boss
+  859  ll
+  860  tail -f 1.log 
+  861  vi 1.log 
+  862  ss -lntp 
+  863  mysql 
+  864  mysql -uroot -p
+  865  ll
+  866  mysql -upay -p
+  867  mysql -uroot -p
+  868  ll
+  869  ps aux
+  870  history
+  871  mysql -uroot 
+  872  mysql -uroot -p
+  873  ll
+  874  ps aux | grep mysql
+  875  mysql -uroot -P 33060 -p
+  876  mysql -uroot -P 33060
+  877  ss -lntp 
+  878  mysql -uroot -p
+  879  ll
+  880  cd /workspace/
+  881  ll
+  882  cd dongfeng-pay/n
+  883  ll
+  884  cd dongfeng-pay/
+  885  ll
+  886  cd agent/
+  887  ll
+  888  vi conf/config.go 
+  889  vi conf/app.conf 
+  890  ll
+  891  cd ..
+  892  ll
+  893  cd boss/
+  894  ll
+  895  vi conf/app.conf 
+  896  ll
+  897  cd ..
+  898  ll
+  899  cd gateway/
+  900  ll
+  901  vi conf/config.go 
+  902  vi conf/app.conf 
+  903  cd ..
+  904  ll
+  905  cd merchant/
+  906  ll
+  907  vi conf/app.conf 
+  908  cd ..
+  909  ll
+  910  cd shop/
+  911  ll
+  912  vi conf/app.conf 
+  913  cd ..
+  914  ll
+  915  cd agent/
+  916  ll
+  917  ps aux | grep agent
+  918  kill -9 50836
+  919  nohup ./agent > 1.log &
+  920  cd ..
+  921  ll
+  922  cd boss/
+  923  ll
+  924  ps aux | grep boss
+  925  kill -9 117980
+  926  nohup ./boss > 1.log &
+  927  ll
+  928  cd ..
+  929  ll
+  930  cd gateway/
+  931  ll
+  932  ps aux | grep gateway
+  933  kill -9 49445
+  934  nohup ./gateway > 1.log &
+  935  ./gateway 
+  936  mysql -uroot -p
+  937  ll
+  938  vi conf/app.conf 
+  939  vi conf/config.go 
+  940  vi conf/mq_config.go 
+  941  vi conf/pay_way_code.go 
+  942  ll
+  943  ./gateway 
+  944  ll
+  945  vi conf/config.go 
+  946  ./gateway -c con
+  947  ./gateway -c conf/config.go 
+  948  ll
+  949  rm gateway 
+  950  l
+  951  ll
+  952  rz
+  953  ll
+  954  ./gateway 
+  955  nohup ./gateway > 1.log &
+  956  cd ..
+  957  ll
+  958  cd merchant/
+  959  ll
+  960  ps aux | grep merchant
+  961  kill -9 98069
+  962  nohup ./merchant > 1.log &
+  963  ll
+  964  cd ..
+  965  ll
+  966  mysql -u root -p
+  967  mysql
+  968  mysql -u root -p
+  969  mysql
+  970  ll
+  971  cd /home/
+  972  ll
+  973  ps -aux
+  974  cd /home/ser
+  975  ll
+  976  ss -lntp 
+  977  cd wo
+  978  cd /workspace/
+  979  ll
+  980  cd dongfeng-pay/
+  981  ll
+  982  cd agent/
+  983  ll
+  984  vi 1.log 
+  985  vi conf/app.conf 
+  986  vi conf/config.go 
+  987  mysql -uroot -p
+  988  ll
+  989  rm agent 
+  990  ll
+  991  rz
+  992  ll
+  993  ps aux | grep agent
+  994  kill -9 118597
+  995  ll
+  996  nohup ./agent > 1.log &
+  997  tail -f 1.log 
+  998  pwd
+  999  ps -ef
+ 1000  ls
+ 1001  ll
+ 1002  cd go/
+ 1003  ls
+ 1004  cd ..
+ 1005  ll
+ 1006  cd /mnt/
+ 1007  ls
+ 1008  ll
+ 1009  cd 
+ 1010  ls
+ 1011  cat install.sh 
+ 1012  ps -ef|grep nginx
+ 1013  ps -ef|grep mysql
+ 1014  ps -ef|grep docker
+ 1015  ps -ef|grep go
+ 1016  ls
+ 1017  ll
+ 1018  cat config.sh 
+ 1019  ls
+ 1020  pwd
+ 1021  ll
+ 1022  cd go/
+ 1023  ls
+ 1024  cd
+ 1025  ls
+ 1026  history 
+ 1027  cd /workspace/
+ 1028  ls
+ 1029  cd dongfeng-pay/
+ 1030  ls
+ 1031  ll
+ 1032  cd ..
+ 1033  ll
+ 1034  cd apache-activemq-5.19.0/
+ 1035  ls
+ 1036  cd ..
+ 1037  ll
+ 1038  cd dongfeng-pay/
+ 1039  ls
+ 1040  ll
+ 1041  cd gateway
+ 1042  ls
+ 1043  cd ..
+ 1044  ll
+ 1045  cd agent/
+ 1046  ls
+ 1047  history |less
+
+

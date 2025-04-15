@@ -1,29 +1,26 @@
--- MySQL dump 10.13  Distrib 5.6.51, for Linux (x86_64)
---
--- Host: localhost    Database: juhe_pay
--- ------------------------------------------------------
--- Server version	5.6.51
+/*
+Navicat MySQL Data Transfer
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+Source Server         : local
+Source Server Version : 80033
+Source Host           : localhost:3306
+Source Database       : juhe_pay
 
---
--- Table structure for table `account_history_info`
---
+Target Server Type    : MYSQL
+Target Server Version : 80033
+File Encoding         : 65001
 
+Date: 2025-04-15 12:22:07
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for account_history_info
+-- ----------------------------
 DROP TABLE IF EXISTS `account_history_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `account_history_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `account_uid` varchar(100) NOT NULL COMMENT '账号uid',
   `account_name` varchar(100) NOT NULL COMMENT '账户名称',
   `type` varchar(20) NOT NULL DEFAULT '' COMMENT '减款，加款',
@@ -32,28 +29,19 @@ CREATE TABLE `account_history_info` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='账户账户资金动向表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3 COMMENT='账户账户资金动向表';
 
---
--- Dumping data for table `account_history_info`
---
+-- ----------------------------
+-- Records of account_history_info
+-- ----------------------------
+INSERT INTO `account_history_info` VALUES ('24', '8888c9kit6bimggos5kk0c8g', '天天', 'plus_amount', '50000.000', '50000.000', '2022-04-27 19:54:28', '2022-04-27 19:54:28');
 
-LOCK TABLES `account_history_info` WRITE;
-/*!40000 ALTER TABLE `account_history_info` DISABLE KEYS */;
-INSERT INTO `account_history_info` VALUES (24,'8888c9kit6bimggos5kk0c8g','天天','plus_amount',50000.000,50000.000,'2022-04-27 11:54:28','2022-04-27 11:54:28');
-/*!40000 ALTER TABLE `account_history_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `account_info`
---
-
+-- ----------------------------
+-- Table structure for account_info
+-- ----------------------------
 DROP TABLE IF EXISTS `account_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `account_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `status` varchar(20) NOT NULL DEFAULT 'active' COMMENT '状态',
   `account_uid` varchar(100) NOT NULL COMMENT '账户uid，对应为merchant_uid或者agent_uid',
   `account_name` varchar(100) NOT NULL COMMENT '账户名称，对应的是merchant_name或者agent_name',
@@ -68,28 +56,20 @@ CREATE TABLE `account_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `account_uid` (`account_uid`),
   UNIQUE KEY `account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='账户记录表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='账户记录表';
 
---
--- Dumping data for table `account_info`
---
+-- ----------------------------
+-- Records of account_info
+-- ----------------------------
+INSERT INTO `account_info` VALUES ('1', 'active', '8888c254gk8isf001cqrj6og', '测试账号', '6100.000', '6100.000', '0.000', '0.000', '0.000', '0.000', '2022-04-23 18:38:38', '2021-04-29 21:46:57');
+INSERT INTO `account_info` VALUES ('3', 'active', '8888c9kit6bimggos5kk0c8g', '天天', '50000.000', '50000.000', '0.000', '0.000', '0.000', '0.000', '2022-04-27 19:54:28', '2022-04-27 19:52:57');
 
-LOCK TABLES `account_info` WRITE;
-/*!40000 ALTER TABLE `account_info` DISABLE KEYS */;
-INSERT INTO `account_info` VALUES (1,'active','8888c254gk8isf001cqrj6og','测试账号',6100.000,6100.000,0.000,0.000,0.000,0.000,'2022-04-23 10:38:38','2021-04-29 13:46:57'),(3,'active','8888c9kit6bimggos5kk0c8g','天天',50000.000,50000.000,0.000,0.000,0.000,0.000,'2022-04-27 11:54:28','2022-04-27 11:52:57');
-/*!40000 ALTER TABLE `account_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `agent_info`
---
-
+-- ----------------------------
+-- Table structure for agent_info
+-- ----------------------------
 DROP TABLE IF EXISTS `agent_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `agent_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `status` varchar(20) NOT NULL DEFAULT 'active' COMMENT '代理状态状态',
   `agent_name` varchar(100) NOT NULL COMMENT '代理名称',
   `agent_password` varchar(50) NOT NULL COMMENT '代理登录密码',
@@ -102,27 +82,19 @@ CREATE TABLE `agent_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `agent_name` (`agent_name`),
   UNIQUE KEY `agent_uid` (`agent_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='代理';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='代理';
 
---
--- Dumping data for table `agent_info`
---
+-- ----------------------------
+-- Records of agent_info
+-- ----------------------------
+INSERT INTO `agent_info` VALUES ('1', 'active', '管理员', 'E10ADC3949BA59ABBE56E057F20F883E', '123456', '1', '10086', null, '2025-04-15 11:19:19', '0000-00-00 00:00:00');
 
-LOCK TABLES `agent_info` WRITE;
-/*!40000 ALTER TABLE `agent_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `agent_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `bank_card_info`
---
-
+-- ----------------------------
+-- Table structure for bank_card_info
+-- ----------------------------
 DROP TABLE IF EXISTS `bank_card_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `bank_card_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `uid` varchar(100) NOT NULL COMMENT '唯一标识',
   `user_name` varchar(100) NOT NULL COMMENT '用户名称',
   `bank_name` varchar(100) NOT NULL COMMENT '银行名称',
@@ -138,57 +110,39 @@ CREATE TABLE `bank_card_info` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最近更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uid` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='银行卡表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='银行卡表';
 
---
--- Dumping data for table `bank_card_info`
---
+-- ----------------------------
+-- Records of bank_card_info
+-- ----------------------------
+INSERT INTO `bank_card_info` VALUES ('5', '3333c9kirsbimggos5kk0c5g', '8888c254gk8isf001cqrj6og', '11', '11', 'private', '11', '11', 'identify-card', '11', '11', '11', '2022-04-27 19:50:09', '2022-04-27 19:50:09');
 
-LOCK TABLES `bank_card_info` WRITE;
-/*!40000 ALTER TABLE `bank_card_info` DISABLE KEYS */;
-INSERT INTO `bank_card_info` VALUES (5,'3333c9kirsbimggos5kk0c5g','8888c254gk8isf001cqrj6og','11','11','private','11','11','identify-card','11','11','11','2022-04-27 11:50:09','2022-04-27 11:50:09');
-/*!40000 ALTER TABLE `bank_card_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `legend_any_money`
---
-
+-- ----------------------------
+-- Table structure for legend_any_money
+-- ----------------------------
 DROP TABLE IF EXISTS `legend_any_money`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `legend_any_money` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `template_name` varchar(50) NOT NULL DEFAULT 'OK' COMMENT '模板名称',
   `game_money_name` varchar(30) DEFAULT NULL COMMENT '游戏币名称，默认是元宝，也可以是钻石、点券',
-  `game_money_scale` int(11) NOT NULL DEFAULT '100' COMMENT '游戏币比例，默认是1：100',
+  `game_money_scale` int NOT NULL DEFAULT '100' COMMENT '游戏币比例，默认是1：100',
   `limit_low` double(20,2) NOT NULL DEFAULT '10.00' COMMENT '最低值金额，默认是10元',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='充值任意金额类型';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COMMENT='充值任意金额类型';
 
---
--- Dumping data for table `legend_any_money`
---
+-- ----------------------------
+-- Records of legend_any_money
+-- ----------------------------
+INSERT INTO `legend_any_money` VALUES ('13', '技术测试模板', '钻石代付', '1000', '10.00', '2021-05-16 23:03:39', '2021-05-16 23:03:39');
 
-LOCK TABLES `legend_any_money` WRITE;
-/*!40000 ALTER TABLE `legend_any_money` DISABLE KEYS */;
-INSERT INTO `legend_any_money` VALUES (13,'技术测试模板','钻石代付',1000,10.00,'2021-05-16 15:03:39','2021-05-16 15:03:39');
-/*!40000 ALTER TABLE `legend_any_money` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `legend_area`
---
-
+-- ----------------------------
+-- Table structure for legend_area
+-- ----------------------------
 DROP TABLE IF EXISTS `legend_area`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `legend_area` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `area_name` varchar(150) NOT NULL DEFAULT 'OK' COMMENT '分区名称',
   `uid` varchar(50) NOT NULL COMMENT '分区id',
   `group_name` varchar(150) NOT NULL COMMENT '分组id',
@@ -200,88 +154,73 @@ CREATE TABLE `legend_area` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uid` (`uid`) USING BTREE,
   UNIQUE KEY `area_name` (`area_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=200016 DEFAULT CHARSET=utf8 COMMENT='分区列表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=200016 DEFAULT CHARSET=utf8mb3 COMMENT='分区列表';
 
---
--- Dumping data for table `legend_area`
---
+-- ----------------------------
+-- Records of legend_area
+-- ----------------------------
+INSERT INTO `legend_area` VALUES ('200006', '琼琼2', 'c2htuhoisf00uunvkbb0', '分组12', '代付', '大幅度发', '2021-05-19 07:37:43', '2021-05-19 07:37:43', '技术测试模板');
+INSERT INTO `legend_area` VALUES ('200007', '琼琼3', 'c2htum8isf00uunvkbbg', '分组12', '的', '地方', '2021-05-19 07:38:01', '2021-05-19 07:38:01', '技术测试模板');
+INSERT INTO `legend_area` VALUES ('200008', '琼琼4', 'c2htuugisf00uunvkbc0', '分组12', '的', '2', '2021-05-19 07:38:34', '2021-05-19 07:38:34', '技术测试模板');
+INSERT INTO `legend_area` VALUES ('200009', '琼琼5', 'c2htv0gisf00uunvkbcg', '分组12', '6', '6', '2021-05-19 07:38:42', '2021-05-19 07:38:42', '技术测试模板');
+INSERT INTO `legend_area` VALUES ('200010', '琼琼7', 'c2htv28isf00uunvkbd0', '分组12', '7', '7', '2021-05-19 07:38:49', '2021-05-19 07:38:49', '技术测试模板');
+INSERT INTO `legend_area` VALUES ('200011', '琼琼8', 'c2htv6gisf00uunvkbdg', '分组1', '8', '8', '2021-05-19 07:39:06', '2021-05-19 07:39:06', '技术测试模板');
+INSERT INTO `legend_area` VALUES ('200012', '琼琼9', 'c2htvigisf00uunvkbe0', '分组1', '9', '9', '2021-05-19 07:39:54', '2021-05-19 07:39:54', '技术测试模板');
+INSERT INTO `legend_area` VALUES ('200013', '琼琼11', 'c2htvloisf00uunvkbeg', '分组1', '11', '11', '2021-05-19 07:40:07', '2021-05-19 07:40:07', '技术测试模板');
+INSERT INTO `legend_area` VALUES ('200015', '琼琼33', 'c2htvpgisf00uunvkbfg', '分组12', '33', '33', '2021-05-19 19:33:55', '2021-05-19 07:40:22', '技术测试模板');
 
-LOCK TABLES `legend_area` WRITE;
-/*!40000 ALTER TABLE `legend_area` DISABLE KEYS */;
-INSERT INTO `legend_area` VALUES (200006,'琼琼2','c2htuhoisf00uunvkbb0','分组12','代付','大幅度发','2021-05-18 23:37:43','2021-05-18 23:37:43','技术测试模板'),(200007,'琼琼3','c2htum8isf00uunvkbbg','分组12','的','地方','2021-05-18 23:38:01','2021-05-18 23:38:01','技术测试模板'),(200008,'琼琼4','c2htuugisf00uunvkbc0','分组12','的','2','2021-05-18 23:38:34','2021-05-18 23:38:34','技术测试模板'),(200009,'琼琼5','c2htv0gisf00uunvkbcg','分组12','6','6','2021-05-18 23:38:42','2021-05-18 23:38:42','技术测试模板'),(200010,'琼琼7','c2htv28isf00uunvkbd0','分组12','7','7','2021-05-18 23:38:49','2021-05-18 23:38:49','技术测试模板'),(200011,'琼琼8','c2htv6gisf00uunvkbdg','分组1','8','8','2021-05-18 23:39:06','2021-05-18 23:39:06','技术测试模板'),(200012,'琼琼9','c2htvigisf00uunvkbe0','分组1','9','9','2021-05-18 23:39:54','2021-05-18 23:39:54','技术测试模板'),(200013,'琼琼11','c2htvloisf00uunvkbeg','分组1','11','11','2021-05-18 23:40:07','2021-05-18 23:40:07','技术测试模板'),(200015,'琼琼33','c2htvpgisf00uunvkbfg','分组12','33','33','2021-05-19 11:33:55','2021-05-18 23:40:22','技术测试模板');
-/*!40000 ALTER TABLE `legend_area` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `legend_fix_money`
---
-
+-- ----------------------------
+-- Table structure for legend_fix_money
+-- ----------------------------
 DROP TABLE IF EXISTS `legend_fix_money`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `legend_fix_money` (
   `uid` varchar(32) NOT NULL COMMENT '唯一id',
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `template_name` varchar(50) NOT NULL DEFAULT 'OK' COMMENT '模板名称',
   `price` double(20,2) NOT NULL DEFAULT '0.00' COMMENT '售价，默认是0',
   `goods_name` varchar(120) DEFAULT NULL COMMENT '商品名称',
   `goods_no` varchar(60) DEFAULT NULL COMMENT '商品编号',
-  `buy_times` int(11) NOT NULL DEFAULT '1' COMMENT '该商品可够次数，默认为1',
+  `buy_times` int NOT NULL DEFAULT '1' COMMENT '该商品可够次数，默认为1',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='充值固定金额类型';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COMMENT='充值固定金额类型';
 
---
--- Dumping data for table `legend_fix_money`
---
+-- ----------------------------
+-- Records of legend_fix_money
+-- ----------------------------
+INSERT INTO `legend_fix_money` VALUES ('', '15', '', '1.00', '1', '1', '1', '2021-05-16 22:18:06', '2021-05-16 22:18:06');
+INSERT INTO `legend_fix_money` VALUES ('', '16', '', '1.00', '1', '1', '1', '2021-05-16 22:18:59', '2021-05-16 22:18:59');
+INSERT INTO `legend_fix_money` VALUES ('', '17', '', '1.00', '1', '1', '1', '2021-05-16 22:21:46', '2021-05-16 22:21:46');
 
-LOCK TABLES `legend_fix_money` WRITE;
-/*!40000 ALTER TABLE `legend_fix_money` DISABLE KEYS */;
-INSERT INTO `legend_fix_money` VALUES ('',15,'',1.00,'1','1',1,'2021-05-16 14:18:06','2021-05-16 14:18:06'),('',16,'',1.00,'1','1',1,'2021-05-16 14:18:59','2021-05-16 14:18:59'),('',17,'',1.00,'1','1',1,'2021-05-16 14:21:46','2021-05-16 14:21:46');
-/*!40000 ALTER TABLE `legend_fix_money` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `legend_fix_present`
---
-
+-- ----------------------------
+-- Table structure for legend_fix_present
+-- ----------------------------
 DROP TABLE IF EXISTS `legend_fix_present`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `legend_fix_present` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `template_name` varchar(50) NOT NULL DEFAULT 'OK' COMMENT '模板名称',
-  `money` int(11) NOT NULL DEFAULT '0' COMMENT '金额，默认是0',
-  `present_money` int(11) DEFAULT NULL COMMENT '赠送金额',
+  `money` int NOT NULL DEFAULT '0' COMMENT '金额，默认是0',
+  `present_money` int DEFAULT NULL COMMENT '赠送金额',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   `uid` varchar(32) NOT NULL DEFAULT '唯一id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='固定金额赠送';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COMMENT='固定金额赠送';
 
---
--- Dumping data for table `legend_fix_present`
---
+-- ----------------------------
+-- Records of legend_fix_present
+-- ----------------------------
+INSERT INTO `legend_fix_present` VALUES ('8', '技术测试模板', '3', '3', '2021-05-16 23:03:39', '2021-05-16 22:55:34', 'F5NNP3OC41EKBORPYBQV');
+INSERT INTO `legend_fix_present` VALUES ('14', '技术测试模板', '5', '5', '2021-05-16 23:03:39', '2021-05-16 23:03:13', '3WBHP7Q6T421WNKNDW4M');
+INSERT INTO `legend_fix_present` VALUES ('15', '技术测试模板', '4', '4', '2021-05-16 23:03:39', '2021-05-16 23:03:23', 'PV29NV5PGV32KSI847CV');
 
-LOCK TABLES `legend_fix_present` WRITE;
-/*!40000 ALTER TABLE `legend_fix_present` DISABLE KEYS */;
-INSERT INTO `legend_fix_present` VALUES (8,'技术测试模板',3,3,'2021-05-16 15:03:39','2021-05-16 14:55:34','F5NNP3OC41EKBORPYBQV'),(14,'技术测试模板',5,5,'2021-05-16 15:03:39','2021-05-16 15:03:13','3WBHP7Q6T421WNKNDW4M'),(15,'技术测试模板',4,4,'2021-05-16 15:03:39','2021-05-16 15:03:23','PV29NV5PGV32KSI847CV');
-/*!40000 ALTER TABLE `legend_fix_present` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `legend_group`
---
-
+-- ----------------------------
+-- Table structure for legend_group
+-- ----------------------------
 DROP TABLE IF EXISTS `legend_group`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `legend_group` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `group_name` varchar(50) NOT NULL DEFAULT 'OK' COMMENT '分组名称',
   `uid` varchar(50) NOT NULL COMMENT '分组id',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
@@ -289,57 +228,52 @@ CREATE TABLE `legend_group` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `group_name` (`group_name`) USING BTREE,
   UNIQUE KEY `group_uid` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='分组列表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3 COMMENT='分组列表';
 
---
--- Dumping data for table `legend_group`
---
+-- ----------------------------
+-- Records of legend_group
+-- ----------------------------
+INSERT INTO `legend_group` VALUES ('8', '分组5', 'c2h7h6oisf00jf91l220', '2021-05-18 06:07:23', '2021-05-18 06:07:23');
+INSERT INTO `legend_group` VALUES ('9', '分组6', 'c2h7h7oisf00jf91l22g', '2021-05-18 06:07:27', '2021-05-18 06:07:27');
+INSERT INTO `legend_group` VALUES ('10', '分组7', 'c2h7h8gisf00jf91l230', '2021-05-18 06:07:30', '2021-05-18 06:07:30');
+INSERT INTO `legend_group` VALUES ('11', '分组8', 'c2h7h98isf00jf91l23g', '2021-05-18 06:07:33', '2021-05-18 06:07:33');
+INSERT INTO `legend_group` VALUES ('12', '分组9', 'c2h7ha8isf00jf91l240', '2021-05-18 06:07:37', '2021-05-18 06:07:37');
+INSERT INTO `legend_group` VALUES ('13', '分组10', 'c2h7hboisf00jf91l24g', '2021-05-18 06:07:43', '2021-05-18 06:07:43');
+INSERT INTO `legend_group` VALUES ('14', '分组11', 'c2h7hcgisf00jf91l250', '2021-05-18 06:07:46', '2021-05-18 06:07:46');
+INSERT INTO `legend_group` VALUES ('16', '分组1', 'c2h7i0oisf00jf91l260', '2021-05-18 06:09:07', '2021-05-18 06:09:07');
+INSERT INTO `legend_group` VALUES ('18', '分组12', 'c2h7i70isf00jf91l270', '2021-05-18 06:09:32', '2021-05-18 06:09:32');
 
-LOCK TABLES `legend_group` WRITE;
-/*!40000 ALTER TABLE `legend_group` DISABLE KEYS */;
-INSERT INTO `legend_group` VALUES (8,'分组5','c2h7h6oisf00jf91l220','2021-05-17 22:07:23','2021-05-17 22:07:23'),(9,'分组6','c2h7h7oisf00jf91l22g','2021-05-17 22:07:27','2021-05-17 22:07:27'),(10,'分组7','c2h7h8gisf00jf91l230','2021-05-17 22:07:30','2021-05-17 22:07:30'),(11,'分组8','c2h7h98isf00jf91l23g','2021-05-17 22:07:33','2021-05-17 22:07:33'),(12,'分组9','c2h7ha8isf00jf91l240','2021-05-17 22:07:37','2021-05-17 22:07:37'),(13,'分组10','c2h7hboisf00jf91l24g','2021-05-17 22:07:43','2021-05-17 22:07:43'),(14,'分组11','c2h7hcgisf00jf91l250','2021-05-17 22:07:46','2021-05-17 22:07:46'),(16,'分组1','c2h7i0oisf00jf91l260','2021-05-17 22:09:07','2021-05-17 22:09:07'),(18,'分组12','c2h7i70isf00jf91l270','2021-05-17 22:09:32','2021-05-17 22:09:32');
-/*!40000 ALTER TABLE `legend_group` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `legend_scale_present`
---
-
+-- ----------------------------
+-- Table structure for legend_scale_present
+-- ----------------------------
 DROP TABLE IF EXISTS `legend_scale_present`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `legend_scale_present` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `template_name` varchar(50) NOT NULL DEFAULT 'OK' COMMENT '模板名称',
-  `money` int(11) NOT NULL DEFAULT '0' COMMENT '金额，默认是0',
+  `money` int NOT NULL DEFAULT '0' COMMENT '金额，默认是0',
   `present_scale` decimal(20,3) DEFAULT NULL COMMENT '赠送比例',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   `uid` varchar(32) NOT NULL DEFAULT '唯一id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='按百分比赠送';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COMMENT='按百分比赠送';
 
---
--- Dumping data for table `legend_scale_present`
---
+-- ----------------------------
+-- Records of legend_scale_present
+-- ----------------------------
+INSERT INTO `legend_scale_present` VALUES ('1', '技术测试', '7', '7.000', '2021-05-15 07:34:39', '2021-05-15 07:34:39', 'XEYZVFES4YUIU2MSEXMR');
+INSERT INTO `legend_scale_present` VALUES ('2', '技术测试', '8', '8.000', '2021-05-15 07:34:39', '2021-05-15 07:34:39', 'DBYAVA464EUEPE97T2M9');
+INSERT INTO `legend_scale_present` VALUES ('4', '技术测试', '5', '5.000', '2021-05-15 07:41:04', '2021-05-15 07:41:04', '9UXT5BO1KMEMCPYLNGPL');
+INSERT INTO `legend_scale_present` VALUES ('5', '技术测试', '6', '6.000', '2021-05-15 07:41:04', '2021-05-15 07:41:04', '471NH5XKPRIO4B2T5O6D');
+INSERT INTO `legend_scale_present` VALUES ('8', '技术测试模板', '6', '6.000', '2021-05-16 23:03:39', '2021-05-16 23:03:39', '87JOQSRQ1K9BE5NHMVJO');
+INSERT INTO `legend_scale_present` VALUES ('9', '技术测试模板', '7', '7.000', '2021-05-16 23:03:39', '2021-05-16 23:03:39', '8SYB9VBM1CPDW8RXSD88');
 
-LOCK TABLES `legend_scale_present` WRITE;
-/*!40000 ALTER TABLE `legend_scale_present` DISABLE KEYS */;
-INSERT INTO `legend_scale_present` VALUES (1,'技术测试',7,7.000,'2021-05-14 23:34:39','2021-05-14 23:34:39','XEYZVFES4YUIU2MSEXMR'),(2,'技术测试',8,8.000,'2021-05-14 23:34:39','2021-05-14 23:34:39','DBYAVA464EUEPE97T2M9'),(4,'技术测试',5,5.000,'2021-05-14 23:41:04','2021-05-14 23:41:04','9UXT5BO1KMEMCPYLNGPL'),(5,'技术测试',6,6.000,'2021-05-14 23:41:04','2021-05-14 23:41:04','471NH5XKPRIO4B2T5O6D'),(8,'技术测试模板',6,6.000,'2021-05-16 15:03:39','2021-05-16 15:03:39','87JOQSRQ1K9BE5NHMVJO'),(9,'技术测试模板',7,7.000,'2021-05-16 15:03:39','2021-05-16 15:03:39','8SYB9VBM1CPDW8RXSD88');
-/*!40000 ALTER TABLE `legend_scale_present` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `legend_scale_template`
---
-
+-- ----------------------------
+-- Table structure for legend_scale_template
+-- ----------------------------
 DROP TABLE IF EXISTS `legend_scale_template`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `legend_scale_template` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `merchant_uid` varchar(32) NOT NULL DEFAULT '' COMMENT '商户uid',
   `template_name` varchar(50) NOT NULL DEFAULT 'OK' COMMENT '模板名称',
   `user_uid` varchar(50) NOT NULL DEFAULT 'role' COMMENT '用户标识',
@@ -350,29 +284,20 @@ CREATE TABLE `legend_scale_template` (
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `templete_name` (`template_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8 COMMENT='传奇比例模板';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb3 COMMENT='传奇比例模板';
 
---
--- Dumping data for table `legend_scale_template`
---
+-- ----------------------------
+-- Records of legend_scale_template
+-- ----------------------------
+INSERT INTO `legend_scale_template` VALUES ('53', '8888c254gk8isf001cqrj6og', '技术测试模板', '我是狗', '的反间谍法', 'radio-any-money', 'scale-present', '2021-05-16 23:03:39', '2021-05-16 22:23:02');
 
-LOCK TABLES `legend_scale_template` WRITE;
-/*!40000 ALTER TABLE `legend_scale_template` DISABLE KEYS */;
-INSERT INTO `legend_scale_template` VALUES (53,'8888c254gk8isf001cqrj6og','技术测试模板','我是狗','的反间谍法','radio-any-money','scale-present','2021-05-16 15:03:39','2021-05-16 14:23:02');
-/*!40000 ALTER TABLE `legend_scale_template` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `menu_info`
---
-
+-- ----------------------------
+-- Table structure for menu_info
+-- ----------------------------
 DROP TABLE IF EXISTS `menu_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `menu_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
-  `menu_order` int(5) unsigned NOT NULL DEFAULT '0' COMMENT '一级菜单的排名顺序',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `menu_order` int unsigned NOT NULL DEFAULT '0' COMMENT '一级菜单的排名顺序',
   `menu_uid` varchar(40) NOT NULL COMMENT '一级菜单的唯一标识',
   `first_menu` varchar(50) NOT NULL COMMENT '一级菜单名称，字符不能超过50',
   `second_menu` text COMMENT '二级菜单名称，每个之间用|隔开',
@@ -383,27 +308,18 @@ CREATE TABLE `menu_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_first_menu` (`first_menu`),
   UNIQUE KEY `u_menu_uid` (`menu_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='存放左侧栏的菜单';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='存放左侧栏的菜单';
 
---
--- Dumping data for table `menu_info`
---
+-- ----------------------------
+-- Records of menu_info
+-- ----------------------------
 
-LOCK TABLES `menu_info` WRITE;
-/*!40000 ALTER TABLE `menu_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `menu_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `merchant_deploy_info`
---
-
+-- ----------------------------
+-- Table structure for merchant_deploy_info
+-- ----------------------------
 DROP TABLE IF EXISTS `merchant_deploy_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `merchant_deploy_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `status` varchar(20) NOT NULL DEFAULT 'active' COMMENT '商户状态状态',
   `merchant_uid` varchar(100) NOT NULL COMMENT '商户uid',
   `pay_type` varchar(50) DEFAULT NULL COMMENT '支付配置',
@@ -417,35 +333,26 @@ CREATE TABLE `merchant_deploy_info` (
   `roll_road_agent_rate` decimal(20,3) NOT NULL DEFAULT '0.000' COMMENT '轮询通道代理净利率',
   `is_loan` varchar(10) NOT NULL DEFAULT 'NO' COMMENT '是否押款',
   `loan_rate` decimal(20,3) NOT NULL DEFAULT '0.000' COMMENT '押款比例，默认是0',
-  `loan_days` int(11) NOT NULL DEFAULT '0' COMMENT '押款的天数，默认0天',
-  `unfreeze_hour` int(11) NOT NULL DEFAULT '0' COMMENT '每天解款的时间点，默认是凌晨',
+  `loan_days` int NOT NULL DEFAULT '0' COMMENT '押款的天数，默认0天',
+  `unfreeze_hour` int NOT NULL DEFAULT '0' COMMENT '每天解款的时间点，默认是凌晨',
   `wait_unfreeze_amount` decimal(20,3) DEFAULT NULL COMMENT '等待解款的金额',
   `loan_amount` decimal(20,3) DEFAULT NULL COMMENT '押款中的金额',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='商户通道配置；\r\n单通道给商户的汇率=single_road_platform_rate+single_road_agent_rate+basic_fee；\r\n轮询通道汇率=roll_road_platform_rate+roll_road_agent_rate+basic_fee；';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='商户通道配置；\r\n单通道给商户的汇率=single_road_platform_rate+single_road_agent_rate+basic_fee；\r\n轮询通道汇率=roll_road_platform_rate+roll_road_agent_rate+basic_fee；';
 
---
--- Dumping data for table `merchant_deploy_info`
---
+-- ----------------------------
+-- Records of merchant_deploy_info
+-- ----------------------------
+INSERT INTO `merchant_deploy_info` VALUES ('3', 'active', '8888c254gk8isf001cqrj6og', 'WEIXIN_SCAN', '', '', '0.000', '0.000', '0914', '轮询池1', '1.000', '1.000', 'yes', '0.500', '0', '21', '0.000', '0.000', '2021-11-09 05:56:40', '2021-08-19 01:16:32');
 
-LOCK TABLES `merchant_deploy_info` WRITE;
-/*!40000 ALTER TABLE `merchant_deploy_info` DISABLE KEYS */;
-INSERT INTO `merchant_deploy_info` VALUES (3,'active','8888c254gk8isf001cqrj6og','WEIXIN_SCAN','','',0.000,0.000,'0914','轮询池1',1.000,1.000,'yes',0.500,0,21,0.000,0.000,'2021-11-08 21:56:40','2021-08-18 17:16:32');
-/*!40000 ALTER TABLE `merchant_deploy_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `merchant_info`
---
-
+-- ----------------------------
+-- Table structure for merchant_info
+-- ----------------------------
 DROP TABLE IF EXISTS `merchant_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `merchant_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `status` varchar(20) NOT NULL DEFAULT 'active' COMMENT '商户状态状态',
   `belong_agent_uid` varchar(100) DEFAULT NULL COMMENT '所属代理uid',
   `belong_agent_name` varchar(100) DEFAULT NULL COMMENT '所属代理名称',
@@ -471,28 +378,21 @@ CREATE TABLE `merchant_info` (
   UNIQUE KEY `merchant_name` (`merchant_name`),
   UNIQUE KEY `merchant_key` (`merchant_key`),
   UNIQUE KEY `merchant_secret` (`merchant_secret`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='商户支付配置表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='商户支付配置表';
 
---
--- Dumping data for table `merchant_info`
---
+-- ----------------------------
+-- Records of merchant_info
+-- ----------------------------
+INSERT INTO `merchant_info` VALUES ('1', 'active', '123', '的范德萨发的', '测试账号', '8888c254gk8isf001cqrj6og', 'kkkkc254gk8isf001cqrj6p0', 'ssssc254gk8isf001cqrj6pg', '17343601111', 'E10ADC3949BA59ABBE56E057F20F883E', 'yes', 'yes', '', '这个是用来测试账号的', '4444c4vdosgisf0020c06r0g', '代丽宝', '', '', '0', '2022-04-23 18:36:51', '2021-04-29 21:46:57');
+INSERT INTO `merchant_info` VALUES ('2', 'active', '', '', '138测试', '8888c9kit6bimggos5kk0c8o', 'kkkkc9kit6bimggos5kk0c9p', 'ssssc9kit6bimggos5kk0c9q', '13800138000', 'E10ADC3949BA59ABBE56E057F20F883E', 'no', 'yes', '', '', '', '', '', '', '0', '2022-04-27 19:52:57', '2022-04-27 19:52:57');
+INSERT INTO `merchant_info` VALUES ('3', 'active', '', '', '天天', '8888c9kit6bimggos5kk0c8g', 'kkkkc9kit6bimggos5kk0c90', 'ssssc9kit6bimggos5kk0c9g', '18888888888', 'E10ADC3949BA59ABBE56E057F20F883E', 'no', 'yes', '', '', '', '', '', '', '0', '2022-04-27 19:52:57', '2022-04-27 19:52:57');
 
-LOCK TABLES `merchant_info` WRITE;
-/*!40000 ALTER TABLE `merchant_info` DISABLE KEYS */;
-INSERT INTO `merchant_info` VALUES (1,'active','123','的范德萨发的','测试账号','8888c254gk8isf001cqrj6og','kkkkc254gk8isf001cqrj6p0','ssssc254gk8isf001cqrj6pg','17343601111','E10ADC3949BA59ABBE56E057F20F883E','yes','yes','','这个是用来测试账号的','4444c4vdosgisf0020c06r0g','代丽宝','','',0,'2022-04-23 10:36:51','2021-04-29 13:46:57'),(3,'active','','','天天','8888c9kit6bimggos5kk0c8g','kkkkc9kit6bimggos5kk0c90','ssssc9kit6bimggos5kk0c9g','18888888888','E10ADC3949BA59ABBE56E057F20F883E','no','yes','','','','','','',0,'2022-04-27 11:52:57','2022-04-27 11:52:57');
-/*!40000 ALTER TABLE `merchant_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `merchant_load_info`
---
-
+-- ----------------------------
+-- Table structure for merchant_load_info
+-- ----------------------------
 DROP TABLE IF EXISTS `merchant_load_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `merchant_load_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `status` varchar(20) NOT NULL DEFAULT 'no' COMMENT 'no-没有结算，yes-结算',
   `merchant_uid` varchar(100) NOT NULL COMMENT '商户uid',
   `road_uid` varchar(50) NOT NULL COMMENT '通道uid',
@@ -501,32 +401,23 @@ CREATE TABLE `merchant_load_info` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商户对应的每条通道的押款信息';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='商户对应的每条通道的押款信息';
 
---
--- Dumping data for table `merchant_load_info`
---
+-- ----------------------------
+-- Records of merchant_load_info
+-- ----------------------------
 
-LOCK TABLES `merchant_load_info` WRITE;
-/*!40000 ALTER TABLE `merchant_load_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `merchant_load_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `notify_info`
---
-
+-- ----------------------------
+-- Table structure for notify_info
+-- ----------------------------
 DROP TABLE IF EXISTS `notify_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `notify_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `type` varchar(10) NOT NULL COMMENT '支付订单-order， 代付订单-payfor',
   `bank_order_id` varchar(50) NOT NULL COMMENT '系统订单id',
   `merchant_order_id` varchar(50) NOT NULL COMMENT '下游商户订单id',
   `status` varchar(20) NOT NULL DEFAULT 'wait' COMMENT '状态字段',
-  `times` int(11) NOT NULL DEFAULT '0' COMMENT '回调次数',
+  `times` int NOT NULL DEFAULT '0' COMMENT '回调次数',
   `url` text COMMENT '回调的url',
   `response` text COMMENT '回调返回的结果',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
@@ -534,27 +425,18 @@ CREATE TABLE `notify_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `merchant_order_id` (`merchant_order_id`),
   UNIQUE KEY `bank_order_id` (`bank_order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='支付回调';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='支付回调';
 
---
--- Dumping data for table `notify_info`
---
+-- ----------------------------
+-- Records of notify_info
+-- ----------------------------
 
-LOCK TABLES `notify_info` WRITE;
-/*!40000 ALTER TABLE `notify_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `notify_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `order_info`
---
-
+-- ----------------------------
+-- Table structure for order_info
+-- ----------------------------
 DROP TABLE IF EXISTS `order_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `merchant_order_id` varchar(50) NOT NULL COMMENT '下游商户提交过来的订单id',
   `shop_name` varchar(100) NOT NULL COMMENT '商品名称',
   `order_period` varchar(3) NOT NULL DEFAULT '0' COMMENT '订单有效时间，小时制',
@@ -591,27 +473,18 @@ CREATE TABLE `order_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `merchant_order_id` (`merchant_order_id`),
   UNIQUE KEY `bank_order_id` (`bank_order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='订单表';
 
---
--- Dumping data for table `order_info`
---
+-- ----------------------------
+-- Records of order_info
+-- ----------------------------
 
-LOCK TABLES `order_info` WRITE;
-/*!40000 ALTER TABLE `order_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `order_profit_info`
---
-
+-- ----------------------------
+-- Table structure for order_profit_info
+-- ----------------------------
 DROP TABLE IF EXISTS `order_profit_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order_profit_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `merchant_name` varchar(100) NOT NULL COMMENT '商户名称',
   `merchant_uid` varchar(50) NOT NULL COMMENT '商户uid',
   `agent_uid` varchar(100) DEFAULT NULL COMMENT '代理uid，表示该商户是谁的代理',
@@ -640,27 +513,18 @@ CREATE TABLE `order_profit_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `merchant_order_id` (`merchant_order_id`),
   UNIQUE KEY `bank_order_id` (`bank_order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单利润表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='订单利润表';
 
---
--- Dumping data for table `order_profit_info`
---
+-- ----------------------------
+-- Records of order_profit_info
+-- ----------------------------
 
-LOCK TABLES `order_profit_info` WRITE;
-/*!40000 ALTER TABLE `order_profit_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_profit_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `order_settle_info`
---
-
+-- ----------------------------
+-- Table structure for order_settle_info
+-- ----------------------------
 DROP TABLE IF EXISTS `order_settle_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order_settle_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `pay_product_code` varchar(100) NOT NULL COMMENT '支付产品编码',
   `pay_product_name` varchar(200) NOT NULL COMMENT '支付产品名称',
   `pay_type_code` varchar(50) NOT NULL COMMENT '支付类型编码',
@@ -678,27 +542,18 @@ CREATE TABLE `order_settle_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `merchant_order_id` (`merchant_order_id`),
   UNIQUE KEY `bank_order_id` (`bank_order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单结算表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='订单结算表';
 
---
--- Dumping data for table `order_settle_info`
---
+-- ----------------------------
+-- Records of order_settle_info
+-- ----------------------------
 
-LOCK TABLES `order_settle_info` WRITE;
-/*!40000 ALTER TABLE `order_settle_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_settle_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `payfor_info`
---
-
+-- ----------------------------
+-- Table structure for payfor_info
+-- ----------------------------
 DROP TABLE IF EXISTS `payfor_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `payfor_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `payfor_uid` varchar(100) NOT NULL COMMENT '代付唯一uid',
   `merchant_uid` varchar(100) NOT NULL COMMENT '发起代付的商户uid',
   `merchant_name` varchar(200) NOT NULL COMMENT '发起代付的商户名称',
@@ -738,28 +593,19 @@ CREATE TABLE `payfor_info` (
   UNIQUE KEY `payfor_uid` (`payfor_uid`),
   UNIQUE KEY `bank_order_id` (`bank_order_id`),
   UNIQUE KEY `merchant_order_id` (`merchant_order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='代付表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COMMENT='代付表';
 
---
--- Dumping data for table `payfor_info`
---
+-- ----------------------------
+-- Records of payfor_info
+-- ----------------------------
+INSERT INTO `payfor_info` VALUES ('17', 'ppppc9ro8qu7matk051l4cfg', '8888c9kit6bimggos5kk0c8g', '天天', 'c9ro8qu7matk051l4cg0', '4444c9ro8qu7matk051l4cgg', '', '', '', '', '', '2.000', '3333.000', '3335.000', '11', '11', '11', '11', 'private', '', '', '', '', '11', '11', '', 'self_merchant', '', 'payfor_confirm', 'no', '2022-05-09 00:50:51', '', '', '', '2022-05-09 00:50:51', '2022-05-09 00:50:51');
 
-LOCK TABLES `payfor_info` WRITE;
-/*!40000 ALTER TABLE `payfor_info` DISABLE KEYS */;
-INSERT INTO `payfor_info` VALUES (17,'ppppc9ro8qu7matk051l4cfg','8888c9kit6bimggos5kk0c8g','天天','c9ro8qu7matk051l4cg0','4444c9ro8qu7matk051l4cgg','','','','','',2.000,3333.000,3335.000,'11','11','11','11','private','','','','','11','11','','self_merchant','','payfor_confirm','no','2022-05-08 16:50:51','','','','2022-05-08 16:50:51','2022-05-08 16:50:51');
-/*!40000 ALTER TABLE `payfor_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `power_info`
---
-
+-- ----------------------------
+-- Table structure for power_info
+-- ----------------------------
 DROP TABLE IF EXISTS `power_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `power_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `first_menu_uid` varchar(40) NOT NULL COMMENT '一级菜单的唯一标识',
   `second_menu_uid` varchar(40) NOT NULL COMMENT '二级菜单的唯一标识',
   `second_menu` varchar(50) NOT NULL COMMENT '二级菜单的名称',
@@ -771,27 +617,18 @@ CREATE TABLE `power_info` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最近更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_power_id` (`power_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='存放控制页面的一些功能操作';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='存放控制页面的一些功能操作';
 
---
--- Dumping data for table `power_info`
---
+-- ----------------------------
+-- Records of power_info
+-- ----------------------------
 
-LOCK TABLES `power_info` WRITE;
-/*!40000 ALTER TABLE `power_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `power_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `road_info`
---
-
+-- ----------------------------
+-- Table structure for road_info
+-- ----------------------------
 DROP TABLE IF EXISTS `road_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `road_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `status` varchar(20) NOT NULL DEFAULT 'active通道状态',
   `road_name` varchar(100) NOT NULL COMMENT '通道名称',
   `road_uid` varchar(100) NOT NULL COMMENT '通道唯一id',
@@ -805,43 +642,35 @@ CREATE TABLE `road_info` (
   `today_limit` double NOT NULL COMMENT '每日最多额度',
   `single_min_limit` double NOT NULL COMMENT '单笔最小金额',
   `single_max_limit` double NOT NULL COMMENT '单笔最大金额',
-  `star_hour` int(11) NOT NULL COMMENT '通道开始时间',
-  `end_hour` int(11) NOT NULL COMMENT '通道结束时间',
+  `star_hour` int NOT NULL COMMENT '通道开始时间',
+  `end_hour` int NOT NULL COMMENT '通道结束时间',
   `params` text COMMENT '参数json格式',
   `today_income` decimal(20,3) NOT NULL DEFAULT '0.000' COMMENT '当天的收入',
   `total_income` decimal(20,3) NOT NULL DEFAULT '0.000' COMMENT '通道总收入',
   `today_profit` decimal(20,3) NOT NULL DEFAULT '0.000' COMMENT '当天的收益',
   `total_profit` decimal(20,3) NOT NULL DEFAULT '0.000' COMMENT '通道总收益',
   `balance` decimal(20,3) NOT NULL DEFAULT '0.000' COMMENT '通道的余额',
-  `request_all` int(11) DEFAULT '0' COMMENT '请求总次数',
-  `request_success` int(11) DEFAULT '0' COMMENT '请求成功次数',
+  `request_all` int DEFAULT '0' COMMENT '请求总次数',
+  `request_success` int DEFAULT '0' COMMENT '请求成功次数',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `road_name` (`road_name`),
   UNIQUE KEY `road_uid` (`road_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='通道数据表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COMMENT='通道数据表';
 
---
--- Dumping data for table `road_info`
---
+-- ----------------------------
+-- Records of road_info
+-- ----------------------------
+INSERT INTO `road_info` VALUES ('3', 'active', '代丽宝', '4444c4vdosgisf0020c06r0g', '代丽宝', '代丽支付', 'DAILI', 'WEIXIN_SCAN', '1', '2', '1000000', '10000', '1', '1000', '0', '23', '{}', '300.000', '300.000', '5.000', '5.000', '0.000', '4', '3', '2021-11-08 23:56:42', '2021-09-13 21:06:58');
+INSERT INTO `road_info` VALUES ('4', 'active', '歌力思', '4444c9hsa9bimggv91apihc0', '', '快付支付', 'KF', 'QQ_SYT', '1', '1', '10000', '10000', '1', '10000', '0', '23', '', '0.000', '0.000', '0.000', '0.000', '0.000', '0', '0', '2022-04-23 17:21:41', '2022-04-23 17:21:41');
 
-LOCK TABLES `road_info` WRITE;
-/*!40000 ALTER TABLE `road_info` DISABLE KEYS */;
-INSERT INTO `road_info` VALUES (3,'active','代丽宝','4444c4vdosgisf0020c06r0g','代丽宝','代丽支付','DAILI','WEIXIN_SCAN',1,2,1000000,10000,1,1000,0,23,'{}',300.000,300.000,5.000,5.000,0.000,4,3,'2021-11-08 15:56:42','2021-09-13 13:06:58'),(4,'active','歌力思','4444c9hsa9bimggv91apihc0','','快付支付','KF','QQ_SYT',1,1,10000,10000,1,10000,0,23,'',0.000,0.000,0.000,0.000,0.000,0,0,'2022-04-23 09:21:41','2022-04-23 09:21:41');
-/*!40000 ALTER TABLE `road_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `road_pool_info`
---
-
+-- ----------------------------
+-- Table structure for road_pool_info
+-- ----------------------------
 DROP TABLE IF EXISTS `road_pool_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `road_pool_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `status` varchar(20) NOT NULL DEFAULT 'active' COMMENT '通道池状态',
   `road_pool_name` varchar(100) NOT NULL COMMENT '通道池名称',
   `road_pool_code` varchar(100) NOT NULL COMMENT '通道池编号',
@@ -851,28 +680,19 @@ CREATE TABLE `road_pool_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `road_pool_name` (`road_pool_name`),
   UNIQUE KEY `road_pool_code` (`road_pool_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='通道池';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='通道池';
 
---
--- Dumping data for table `road_pool_info`
---
+-- ----------------------------
+-- Records of road_pool_info
+-- ----------------------------
+INSERT INTO `road_pool_info` VALUES ('1', 'active', '轮询池1', '0914', '4444c4vdosgisf0020c06r0g', '2021-09-15 21:07:44', '2021-09-15 21:07:36');
 
-LOCK TABLES `road_pool_info` WRITE;
-/*!40000 ALTER TABLE `road_pool_info` DISABLE KEYS */;
-INSERT INTO `road_pool_info` VALUES (1,'active','轮询池1','0914','4444c4vdosgisf0020c06r0g','2021-09-15 13:07:44','2021-09-15 13:07:36');
-/*!40000 ALTER TABLE `road_pool_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `role_info`
---
-
+-- ----------------------------
+-- Table structure for role_info
+-- ----------------------------
 DROP TABLE IF EXISTS `role_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `role_name` varchar(100) NOT NULL COMMENT '角色名称',
   `role_uid` varchar(200) NOT NULL COMMENT '角色唯一标识号',
   `show_first_menu` text NOT NULL COMMENT '可以展示的一级菜单名',
@@ -889,30 +709,22 @@ CREATE TABLE `role_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_power_name` (`role_name`),
   UNIQUE KEY `u_role_uid` (`role_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='角色表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COMMENT='角色表';
 
---
--- Dumping data for table `role_info`
---
+-- ----------------------------
+-- Records of role_info
+-- ----------------------------
+INSERT INTO `role_info` VALUES ('1', '超级管理员', 'c62dtroisf0022dhe5ig', '', '', '', '', '', '', '开发', '10086', 'active', '2021-11-05 23:36:15', '2022-04-27 19:49:53');
+INSERT INTO `role_info` VALUES ('2', '555', 'c9hs6irimggv91apih60', '', '', '', '', '', '', '', '10086', 'active', '2022-04-23 17:13:47', '2022-04-27 19:49:53');
 
-LOCK TABLES `role_info` WRITE;
-/*!40000 ALTER TABLE `role_info` DISABLE KEYS */;
-INSERT INTO `role_info` VALUES (1,'超级管理员','c62dtroisf0022dhe5ig','','','','','','','开发','10086','active','2021-11-05 15:36:15','2022-04-27 11:49:53'),(2,'555','c9hs6irimggv91apih60','','','','','','','','10086','active','2022-04-23 09:13:47','2022-04-27 11:49:53');
-/*!40000 ALTER TABLE `role_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `second_menu_info`
---
-
+-- ----------------------------
+-- Table structure for second_menu_info
+-- ----------------------------
 DROP TABLE IF EXISTS `second_menu_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `second_menu_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
-  `first_menu_order` int(5) unsigned NOT NULL DEFAULT '0' COMMENT '一级菜单对应的顺序',
-  `menu_order` int(5) unsigned NOT NULL DEFAULT '0' COMMENT '二级菜单的排名顺序',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `first_menu_order` int unsigned NOT NULL DEFAULT '0' COMMENT '一级菜单对应的顺序',
+  `menu_order` int unsigned NOT NULL DEFAULT '0' COMMENT '二级菜单的排名顺序',
   `first_menu_uid` varchar(40) NOT NULL COMMENT '二级菜单的唯一标识',
   `first_menu` varchar(50) NOT NULL COMMENT '一级菜单名称，字符不能超过50',
   `second_menu_uid` varchar(40) NOT NULL COMMENT '二级菜单唯一标识',
@@ -925,27 +737,18 @@ CREATE TABLE `second_menu_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_second_menu` (`second_menu`),
   UNIQUE KEY `u_second_menu_uid` (`second_menu_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='存放左侧栏的二级菜单';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='存放左侧栏的二级菜单';
 
---
--- Dumping data for table `second_menu_info`
---
+-- ----------------------------
+-- Records of second_menu_info
+-- ----------------------------
 
-LOCK TABLES `second_menu_info` WRITE;
-/*!40000 ALTER TABLE `second_menu_info` DISABLE KEYS */;
-/*!40000 ALTER TABLE `second_menu_info` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user_info`
---
-
+-- ----------------------------
+-- Table structure for user_info
+-- ----------------------------
 DROP TABLE IF EXISTS `user_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_info` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `user_id` varchar(40) NOT NULL COMMENT '用户登录号',
   `passwd` varchar(40) NOT NULL COMMENT '用户登录密码',
   `nick` varchar(30) NOT NULL DEFAULT 'kity' COMMENT '用户昵称',
@@ -958,26 +761,10 @@ CREATE TABLE `user_info` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后一次修改时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='管理员表';
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COMMENT='管理员表';
 
---
--- Dumping data for table `user_info`
---
-
-LOCK TABLES `user_info` WRITE;
-/*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES (1,'10086','E10ADC3949BA59ABBE56E057F20F883E','admin',NULL,'::1','active','nothing','普通操作员','2021-04-21 13:30:02','2022-05-08 08:43:01');
-/*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-05-14 14:41:55
+-- ----------------------------
+-- Records of user_info
+-- ----------------------------
+INSERT INTO `user_info` VALUES ('1', '10086', 'E10ADC3949BA59ABBE56E057F20F883E', 'admin', null, '::1', 'active', 'nothing', '普通操作员', '2021-04-21 21:30:02', '2022-05-08 16:43:01');
+INSERT INTO `user_info` VALUES ('2', '13800138000', 'E10ADC3949BA59ABBE56E057F20F883E', 'kity', null, '::1', 'active', 'nothing', '普通操作员', '2025-04-15 12:05:55', '2025-04-15 12:06:11');
